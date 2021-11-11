@@ -1,0 +1,51 @@
+{
+  "name": "noxkiwi/log",
+  "description": "I am the log project.",
+  "version": "1.0.0",
+  "type": "package",
+  "license": "proprietary",
+  "keywords": [
+    "log",
+    "logging",
+    "logger"
+  ],
+  "homepage": "https://nox.kiwi/",
+  "time": "2021-01-26",
+  "authors": [
+    {
+      "name": "Jan Nox",
+      "email": "jan@nox.kiwi",
+      "homepage": "https://nox.kiwi",
+      "role": "Lead Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.0",
+    "noxkiwi/observing": "*",
+    "noxkiwi/singleton": "*",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-apcu": "*",
+    "ext-pdo": "*",
+    "ext-fileinfo": "*",
+    "ext-memcached": "*",
+    "ext-bcmath": "*",
+    "ext-ftp": "*",
+    "ext-redis": "*",
+    "ext-memcache": "*",
+    "ext-newrelic": "*"
+  },
+  "support": {
+    "email": "jan@nox.kiwi",
+    "issues": "https://nox.kiwi/issues",
+    "forum": "https://nox.kiwi/forum",
+    "wiki": "https://nox.kiwi/wiki",
+    "docs": "https://noxkiwi.atlassian.net/wiki",
+    "source": "https://waetjuzd747uthrv83pe7snpnrjca46c9zvp4dq8gvrvjyxnns7caaxy7gnefaay.nox.kiwi:4430/projects/RS/repos/Core/browse"
+  },
+  "autoload": {
+    "psr-4": {
+      "noxkiwi\\log\\": "backend/class/"
+    }
+  }
+}
