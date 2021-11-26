@@ -8,7 +8,7 @@ use noxkiwi\observing\Observer;
  * I am the observer for all logs.
  *
  * @package      noxkiwi\log\Observer
- * @author       Jan Nox <jan@nox.kiwi>
+ * @author       Jan Nox <jan.nox@pm.me>
  * @license      https://nox.kiwi/license
  * @copyright    2021 noxkiwi
  * @version      1.0.0

@@ -4,13 +4,18 @@ namespace noxkiwi\log\Log;
 use noxkiwi\log\Log;
 use noxkiwi\log\LogLevel;
 use function chr;
+use function date;
+use function explode;
+use function max;
+use function str_repeat;
 use function strlen;
+use function wordwrap;
 
 /**
  * I am the CLI logger.
  *
  * @package      noxkiwi\log\Log
- * @author       Jan Nox <jan@nox.kiwi>
+ * @author       Jan Nox <jan.nox@pm.me>
  * @license      https://nox.kiwi/license
  * @copyright    2021 noxkiwi
  * @version      1.0.0
@@ -18,8 +23,8 @@ use function strlen;
  */
 final class CliLog extends Log
 {
-    protected const USE_DRIVER =  false;
-    private const SSH_COLS = 200;
+    protected const USE_DRIVER = false;
+    private const   SSH_COLS   = 180;
     /** @var array I am the list of foreground colors. */
     private const FOREGROUND_COLOURS = [
         'black'        => '0;30',
@@ -94,10 +99,12 @@ final class CliLog extends Log
                 $backgroundColor = self::BACKGROUND_COLOURS['black'];
                 break;
         }
-        $message = '[' . date('Y-m-d H:i:s.u') . '] ' . $message;
-        if (strlen($message) < self::SSH_COLS) {
-            $message .= str_repeat(' ', self::SSH_COLS - strlen($message));
+        $date   = '[' . date('Y-m-d H:i:s.u') . '] ';
+        $length = self::SSH_COLS - 29;
+        $lines  = explode(chr(10), wordwrap($message, $length, chr(10), true));
+        foreach ($lines as $line) {
+            $appendix = str_repeat(' ', max(0, self::SSH_COLS - 29 - strlen($line)));
+            echo "\033[{$foregroundColor}m\033[{$backgroundColor}m$date$line$appendix\033[0m" . chr(10);
         }
-        echo "\033[{$foregroundColor}m\033[{$backgroundColor}m$message\033[0m" . chr(10);
     }
 }
