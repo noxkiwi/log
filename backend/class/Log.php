@@ -15,7 +15,7 @@ use const FILE_APPEND;
  * I am the base logging class.
  *
  * @package      noxkiwi\log
- * @author       Jan Nox <jan@nox.kiwi>
+ * @author       Jan Nox <jan.nox@pm.me>
  * @license      https://nox.kiwi/license
  * @copyright    2021 noxkiwi
  * @version      1.0.0
@@ -26,7 +26,7 @@ abstract class Log extends Singleton implements LogInterface, ObservableInterfac
     use ObservableTrait;
 
     protected const USE_DRIVER = true;
-    protected const TYPE = 'log';
+    protected const TYPE       = 'log';
     /**
      * I am the minimum level that is required make the log Client write log entries to the storage.
      * <br />If the log entry's level is LESS me, log WILL NOT be performed
@@ -74,7 +74,6 @@ abstract class Log extends Singleton implements LogInterface, ObservableInterfac
     final public function log(int $level, string $message, array $context = null): void
     {
         $this->notify(LogObserver::NOTIFY_LOGENTRY);
-        file_put_contents('/var/www/_log/debug.log', chr(10).$message, FILE_APPEND);
         if ($level < $this->minLevel) {
             return;
         }

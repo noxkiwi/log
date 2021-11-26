@@ -8,7 +8,7 @@ use noxkiwi\log\LogLevel;
  * I am the Log trait. I extend an existing class for all methods that are related to the logging system.
  *
  * @package      noxkiwi\log\Traits
- * @author       Jan Nox <jan@nox.kiwi>
+ * @author       Jan Nox <jan.nox@pm.me>
  * @license      https://nox.kiwi/license
  * @copyright    2021 noxkiwi
  * @version      1.0.0
@@ -66,7 +66,7 @@ trait LogTrait
      */
     final public function logAlert(string $text, array $context = null): void
     {
-        $this->log(LogLevel::ALERT, $text, $context);
+        $this->log(LogLevel::ALERT, "[ALT] $text", $context);
     }
 
     /**
@@ -77,7 +77,7 @@ trait LogTrait
      */
     final public function logCritical(string $text, array $context = null): void
     {
-        $this->log(LogLevel::CRITICAL, $text, $context);
+        $this->log(LogLevel::CRITICAL, "[CRT] $text", $context);
     }
 
     /**
@@ -88,7 +88,7 @@ trait LogTrait
      */
     final public function logError(string $text, array $context = null): void
     {
-        $this->log(LogLevel::ERROR, $text, $context);
+        $this->log(LogLevel::ERROR, "[ERR] $text", $context);
     }
 
     /**
@@ -99,7 +99,7 @@ trait LogTrait
      */
     final public function logWarning(string $text, array $context = null): void
     {
-        $this->log(LogLevel::WARNING, $text, $context);
+        $this->log(LogLevel::WARNING, "[WRN] $text", $context);
     }
 
     /**
@@ -110,7 +110,7 @@ trait LogTrait
      */
     final public function logNotice(string $text, array $context = null): void
     {
-        $this->log(LogLevel::NOTICE, $text, $context);
+        $this->log(LogLevel::NOTICE, "[NTC] $text", $context);
     }
 
     /**
@@ -121,7 +121,7 @@ trait LogTrait
      */
     final public function logInfo(string $text, array $context = null): void
     {
-        $this->log(LogLevel::INFO, $text, $context);
+        $this->log(LogLevel::INFO, "[INF] $text", $context);
     }
 
     /**
@@ -132,6 +132,6 @@ trait LogTrait
      */
     final public function logDebug(string $text, array $context = null): void
     {
-        $this->log(LogLevel::DEBUG, $text, $context);
+        $this->log(LogLevel::DEBUG, "[DBG] $text", $context);
     }
 }

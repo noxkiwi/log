@@ -10,7 +10,7 @@ use function strlen;
  * I am the CLI logger.
  *
  * @package      noxkiwi\log\Log
- * @author       Jan Nox <jan@nox.kiwi>
+ * @author       Jan Nox <jan.nox@pm.me>
  * @license      https://nox.kiwi/license
  * @copyright    2021 noxkiwi
  * @version      1.0.0
