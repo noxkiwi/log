@@ -23,8 +23,8 @@ use function wordwrap;
  */
 final class CliLog extends Log
 {
-    protected const USE_DRIVER =  false;
-    private const SSH_COLS = 200;
+    protected const USE_DRIVER = false;
+    private const   SSH_COLS   = 180;
     /** @var array I am the list of foreground colors. */
     private const FOREGROUND_COLOURS = [
         'black'        => '0;30',
