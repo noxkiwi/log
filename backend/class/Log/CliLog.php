@@ -4,7 +4,12 @@ namespace noxkiwi\log\Log;
 use noxkiwi\log\Log;
 use noxkiwi\log\LogLevel;
 use function chr;
+use function date;
+use function explode;
+use function max;
+use function str_repeat;
 use function strlen;
+use function wordwrap;
 
 /**
  * I am the CLI logger.
