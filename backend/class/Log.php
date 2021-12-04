@@ -73,10 +73,10 @@ abstract class Log extends Singleton implements LogInterface, ObservableInterfac
      */
     final public function log(int $level, string $message, array $context = null): void
     {
-        $this->notify(LogObserver::NOTIFY_LOGENTRY);
         if ($level < $this->minLevel) {
             return;
         }
+        $this->notify(LogObserver::NOTIFY_LOGENTRY);
         $requestId = Request::getInstance()->getIdentifier();
         $message   = "[$requestId] $message";
         $this->write($message, $level);
