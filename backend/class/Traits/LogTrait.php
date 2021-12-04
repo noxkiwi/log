@@ -33,17 +33,6 @@ trait LogTrait
     }
 
     /**
-     * Writes data to the emergency log
-     *
-     * @param string     $text    content to write to the log entry.
-     * @param array|null $context Context to log into the entry.
-     */
-    public function logEmergency(string $text, array $context = null): void
-    {
-        $this->log(LogLevel::EMERGENCY, $text, $context);
-    }
-
-    /**
      * I may perform log with debug level
      *
      * @param int        $level
@@ -67,6 +56,17 @@ trait LogTrait
     final public function logAlert(string $text, array $context = null): void
     {
         $this->log(LogLevel::ALERT, "[ALT] $text", $context);
+    }
+
+    /**
+     * Writes data to the emergency log
+     *
+     * @param string     $text    content to write to the log entry.
+     * @param array|null $context Context to log into the entry.
+     */
+    public function logEmergency(string $text, array $context = null): void
+    {
+        $this->log(LogLevel::EMERGENCY, "[EMG] $text", $context);
     }
 
     /**

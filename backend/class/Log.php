@@ -7,9 +7,7 @@ use noxkiwi\log\Observer\LogObserver;
 use noxkiwi\observing\Observable\ObservableInterface;
 use noxkiwi\observing\Traits\ObservableTrait;
 use noxkiwi\singleton\Singleton;
-use function file_put_contents;
 use function is_int;
-use const FILE_APPEND;
 
 /**
  * I am the base logging class.
@@ -73,10 +71,10 @@ abstract class Log extends Singleton implements LogInterface, ObservableInterfac
      */
     final public function log(int $level, string $message, array $context = null): void
     {
-        $this->notify(LogObserver::NOTIFY_LOGENTRY);
         if ($level < $this->minLevel) {
             return;
         }
+        $this->notify(LogObserver::NOTIFY_LOGENTRY);
         $requestId = Request::getInstance()->getIdentifier();
         $message   = "[$requestId] $message";
         $this->write($message, $level);
