@@ -4,6 +4,9 @@ namespace noxkiwi\log\Log;
 use noxkiwi\log\Log;
 use noxkiwi\log\LogLevel;
 use function chr;
+use function date;
+use function file_put_contents;
+use const FILE_APPEND;
 
 /**
  * I am the file logger.

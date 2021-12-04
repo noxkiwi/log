@@ -7,9 +7,7 @@ use noxkiwi\log\Observer\LogObserver;
 use noxkiwi\observing\Observable\ObservableInterface;
 use noxkiwi\observing\Traits\ObservableTrait;
 use noxkiwi\singleton\Singleton;
-use function file_put_contents;
 use function is_int;
-use const FILE_APPEND;
 
 /**
  * I am the base logging class.
