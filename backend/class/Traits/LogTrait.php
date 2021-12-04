@@ -40,7 +40,7 @@ trait LogTrait
      */
     public function logEmergency(string $text, array $context = null): void
     {
-        $this->log(LogLevel::EMERGENCY, $text, $context);
+        $this->log(LogLevel::EMERGENCY, "[EMG] $text", $context);
     }
 
     /**
