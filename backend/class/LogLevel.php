@@ -33,13 +33,13 @@ abstract class LogLevel
     ];
     public const NAMES     = [
         self::EMERGENCY => 'EMERGENCY',
-        self::ALERT     => 'ALERT',
-        self::CRITICAL  => 'CRITICAL',
-        self::ERROR     => 'ERROR',
-        self::WARNING   => 'WARNING',
-        self::NOTICE    => 'NOTICE',
-        self::INFO      => 'INFO',
-        self::DEBUG     => 'DEBUG'
+        self::ALERT     => '    ALERT',
+        self::CRITICAL  => ' CRITICAL',
+        self::ERROR     => '    ERROR',
+        self::WARNING   => '  WARNING',
+        self::NOTICE    => '   NOTICE',
+        self::INFO      => '     INFO',
+        self::DEBUG     => '    DEBUG'
     ];
 
     /**
