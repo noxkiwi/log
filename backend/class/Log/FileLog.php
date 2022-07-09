@@ -6,6 +6,7 @@ use noxkiwi\log\LogLevel;
 use function chr;
 use function date;
 use function file_put_contents;
+use function is_writable;
 use const FILE_APPEND;
 
 /**
@@ -37,7 +38,7 @@ final class FileLog extends Log
      */
     protected function write(string $message, int $level): void
     {
-        if (empty($this->file)) {
+        if (empty($this->file) || ! is_writable($this->file)) {
             return;
         }
         $levelName = LogLevel::getName($level);
